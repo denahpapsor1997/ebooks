@@ -1,11 +1,11 @@
 <?php
   session_start();
-  $book_isbn = $_GET['bookisbn'];
+  $book_isb = $_GET['bookisbn'];
   // connec to database
   require_once "./functions/database_functions.php";
   $conn = db_connect();
 
-  $query = "SELECT * FROM books WHERE book_isbn = '$book_isbn'";
+  $query = "SELECT * FROM books WHERE book_isbn = '$book_isb'";
   $result = mysqli_query($conn, $query);
   if(!$result){
     echo "Can't retrieve data " . mysqli_error($conn);
